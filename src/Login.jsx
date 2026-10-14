@@ -10,6 +10,7 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMsg("");
     try {
       await login(email, password);
       navigate("/artworks");
@@ -19,17 +20,20 @@ export default function Login() {
   };
 
   return (
-    <div style={{ maxWidth: 320, margin: "60px auto" }}>
-      <h2>Art Gallery Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input placeholder="Email" value={email}
-               onChange={(e) => setEmail(e.target.value)} /><br /><br />
-        <input type="password" placeholder="Password" value={password}
-               onChange={(e) => setPassword(e.target.value)} /><br /><br />
-        <button type="submit">Login</button>
-      </form>
-      <p style={{ color: "red" }}>{msg}</p>
-      <p>New user? <Link to="/register">Register</Link></p>
+    <div className="auth-wrap">
+      <div className="auth-card">
+        <h2>🎨 Art Gallery</h2>
+        <p className="sub">Sign in to explore the collection</p>
+        <form onSubmit={handleSubmit}>
+          <input className="field" placeholder="Email" value={email}
+                 onChange={(e) => setEmail(e.target.value)} />
+          <input className="field" type="password" placeholder="Password" value={password}
+                 onChange={(e) => setPassword(e.target.value)} />
+          <button className="btn btn-block" type="submit">Login</button>
+        </form>
+        <p className="error">{msg}</p>
+        <p className="alt">New here? <Link to="/register">Create an account</Link></p>
+      </div>
     </div>
   );
 }

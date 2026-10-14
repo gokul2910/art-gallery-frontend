@@ -13,6 +13,7 @@ export default function AddArtwork() {
 
   const submit = async (e) => {
     e.preventDefault();
+    setMsg("");
     try {
       const res = await authFetch("/artworks", {
         method: "POST",
@@ -27,17 +28,19 @@ export default function AddArtwork() {
   };
 
   return (
-    <div style={{ maxWidth: 360, margin: "30px auto" }}>
-      <h2>Add Artwork</h2>
-      <form onSubmit={submit}>
-        <input name="title" placeholder="Title" value={form.title} onChange={change} required /><br /><br />
-        <input name="artistName" placeholder="Artist name" value={form.artistName} onChange={change} /><br /><br />
-        <input name="description" placeholder="Description" value={form.description} onChange={change} /><br /><br />
-        <input name="price" type="number" placeholder="Price" value={form.price} onChange={change} /><br /><br />
-        <input name="imageUrl" placeholder="Image URL" value={form.imageUrl} onChange={change} /><br /><br />
-        <button type="submit">Add</button>
-      </form>
-      <p style={{ color: "red" }}>{msg}</p>
+    <div className="container">
+      <div className="form-card">
+        <h2>Add Artwork</h2>
+        <form onSubmit={submit}>
+          <input className="field" name="title" placeholder="Title" value={form.title} onChange={change} required />
+          <input className="field" name="artistName" placeholder="Artist name" value={form.artistName} onChange={change} />
+          <input className="field" name="description" placeholder="Description" value={form.description} onChange={change} />
+          <input className="field" name="price" type="number" placeholder="Price" value={form.price} onChange={change} />
+          <input className="field" name="imageUrl" placeholder="Image URL (https://...)" value={form.imageUrl} onChange={change} />
+          <button className="btn btn-block" type="submit">Add</button>
+        </form>
+        <p className="error">{msg}</p>
+      </div>
     </div>
   );
 }
