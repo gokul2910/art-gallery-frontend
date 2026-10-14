@@ -1,6 +1,15 @@
 import { useEffect, useState } from "react";
 import { authFetch } from "./api";
 
+const API = import.meta.env.VITE_API_URL || "http://localhost:8082/api";
+const ORIGIN = API.replace(/\/api\/?$/, "");
+
+const imgSrc = (u) => {
+  if (!u) return "";
+  if (/^https?:\/\//.test(u)) return u;
+  return `${ORIGIN}${u.startsWith("/") ? "" : "/"}${u}`;
+};
+
 export default function ArtworksPage() {
   const [artworks, setArtworks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -35,7 +44,7 @@ export default function ArtworksPage() {
         {artworks.map((a) => (
           <div key={a.id} style={{ border: "1px solid #ddd", borderRadius: 8, padding: 12 }}>
             {a.imageUrl && (
-              <img src={a.imageUrl} alt={a.title} style={{ width: "100%", borderRadius: 4 }} />
+              <img src={imgSrc(a.imageUrl)} alt={a.title} style={{ width: "100%", borderRadius: 4 }} />
             )}
             <h3>{a.title}</h3>
             <p>{a.artistName}</p>
