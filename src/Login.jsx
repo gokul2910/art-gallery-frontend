@@ -20,19 +20,18 @@ export default function Login() {
   };
 
   return (
-    <div className="auth-wrap">
-      <div className="auth-card">
-        <h2>🎨 Art Gallery</h2>
-        <p className="sub">Sign in to explore the collection</p>
+    <div className="auth-wrap auth-login">
+      <div className="auth-card glass">
+        <h2>User Login</h2>
         <form onSubmit={handleSubmit}>
-          <input className="field" placeholder="Email" value={email}
+          <input className="field" placeholder="Enter Email" value={email}
                  onChange={(e) => setEmail(e.target.value)} />
-          <input className="field" type="password" placeholder="Password" value={password}
+          <input className="field" type="password" placeholder="Enter Password" value={password}
                  onChange={(e) => setPassword(e.target.value)} />
           <button className="btn btn-block" type="submit">Login</button>
         </form>
         <p className="error">{msg}</p>
-        <p className="alt">New here? <Link to="/register">Create an account</Link></p>
+        <p className="alt">Don't have an account? <Link to="/register">Register Here</Link></p>
       </div>
     </div>
   );

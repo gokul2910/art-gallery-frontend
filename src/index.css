@@ -26,20 +26,68 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: linear-gradient(135deg, #1e1b4b 0%, #5b21b6 55%, #c026d3 100%);
+  position: relative;
+  overflow: hidden;
+}
+.auth-login {
+  background: url("/login-bg.jpg") center/cover no-repeat,
+    linear-gradient(135deg, #04141f 0%, #0e4a5a 50%, #04141f 100%);
+}
+.auth-register {
+  background: url("/register-bg.jpg") center/cover no-repeat,
+    linear-gradient(135deg, #6dd5ed 0%, #8b7cf6 55%, #e0a8f0 100%);
 }
 .auth-card {
   width: 100%;
   max-width: 380px;
   background: var(--card);
-  border-radius: 16px;
-  padding: 32px 28px;
+  border-radius: 14px;
+  padding: 30px 28px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
 }
-.auth-card h2 { margin: 0 0 4px; font-size: 26px; }
-.auth-card .sub { margin: 0 0 20px; color: var(--muted); font-size: 14px; }
-.auth-card p.alt { margin-top: 16px; text-align: center; font-size: 14px; color: var(--muted); }
-.auth-card a { color: var(--brand); font-weight: 600; text-decoration: none; }
+.auth-card.glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.auth-card h2 { margin: 0 0 20px; font-size: 24px; text-align: center; }
+.auth-card p.alt { margin-top: 16px; text-align: center; font-size: 14px; color: #374151; }
+.auth-card a { color: #0b6bff; font-weight: 600; text-decoration: none; }
+
+/* Hero (home page) */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 24px;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("/hero.jpg") center/cover no-repeat,
+    linear-gradient(135deg, #3b2f2f, #7c5e4a);
+}
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 6vw, 60px);
+  letter-spacing: 1px;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+.hero p { margin: 0 0 26px; font-size: clamp(16px, 2.2vw, 22px); max-width: 640px; }
+.btn-pink {
+  background: #e91e63;
+  padding: 14px 30px;
+  font-size: 17px;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.btn-pink:hover { background: #c2185b; }
 
 /* Forms */
 .field { display: block; width: 100%; margin-bottom: 14px; padding: 11px 12px;

@@ -1,15 +1,17 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "./Home";
 import Login from "./Login";
+import Register from "./Register";
 import AdminRoute from "./AdminRoute";
 import AddArtwork from "./AddArtwork";
 import ArtworksPage from "./ArtworksPage";
-import Register from "./Register";
 import ProtectedRoute from "./ProtectedRoute";
 import Navbar from "./Navbar";
 
 export default function App() {
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route
@@ -30,7 +32,7 @@ export default function App() {
           </AdminRoute>
         }
       />
-      <Route path="*" element={<Navigate to="/artworks" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

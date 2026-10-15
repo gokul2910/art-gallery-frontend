@@ -28,19 +28,18 @@ export default function Register() {
   };
 
   return (
-    <div className="auth-wrap">
-      <div className="auth-card">
-        <h2>Create account</h2>
-        <p className="sub">Join the gallery in a few seconds</p>
+    <div className="auth-wrap auth-register">
+      <div className="auth-card glass">
+        <h2>User Registration</h2>
         <form onSubmit={submit}>
-          <input className="field" name="username" placeholder="Username" value={form.username} onChange={change} required />
-          <input className="field" name="email" placeholder="Email" value={form.email} onChange={change} required />
-          <input className="field" name="password" type="password" placeholder="Password" value={form.password} onChange={change} required />
-          <input className="field" name="mobile" placeholder="Mobile" value={form.mobile} onChange={change} />
+          <input className="field" name="username" placeholder="Enter Username" value={form.username} onChange={change} required />
+          <input className="field" name="email" placeholder="Enter Mail ID" value={form.email} onChange={change} required />
+          <input className="field" name="password" type="password" placeholder="Enter Password" value={form.password} onChange={change} required />
+          <input className="field" name="mobile" placeholder="Enter Mobile Number" value={form.mobile} onChange={change} />
           <button className="btn btn-block" type="submit">Register</button>
         </form>
         <p className="error">{msg}</p>
-        <p className="alt">Already have an account? <Link to="/login">Login</Link></p>
+        <p className="alt">Already have an account? <Link to="/login">Login Here</Link></p>
       </div>
     </div>
   );
