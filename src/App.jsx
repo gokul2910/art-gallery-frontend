@@ -7,6 +7,7 @@ import AddArtwork from "./AddArtwork";
 import ArtworksPage from "./ArtworksPage";
 import ProtectedRoute from "./ProtectedRoute";
 import Navbar from "./Navbar";
+import ArtworkDetail from "./ArtworkDetail";
 
 export default function App() {
   return (
@@ -20,6 +21,15 @@ export default function App() {
           <ProtectedRoute>
             <Navbar />
             <ArtworksPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/artworks/:id"
+        element={
+          <ProtectedRoute>
+            <Navbar />
+            <ArtworkDetail />
           </ProtectedRoute>
         }
       />

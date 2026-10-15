@@ -1,14 +1,6 @@
 import { useEffect, useState } from "react";
-import { authFetch } from "./api";
-
-const API = import.meta.env.VITE_API_URL || "http://localhost:8082/api";
-const ORIGIN = API.replace(/\/api\/?$/, "");
-
-const imgSrc = (u) => {
-  if (!u) return "";
-  if (/^https?:\/\//.test(u)) return u;
-  return `${ORIGIN}${u.startsWith("/") ? "" : "/"}${u}`;
-};
+import { Link } from "react-router-dom";
+import { authFetch, imgSrc } from "./api";
 
 export default function ArtworksPage() {
   const [artworks, setArtworks] = useState([]);
@@ -38,15 +30,14 @@ export default function ArtworksPage() {
       {artworks.length === 0 && <p>No artworks yet.</p>}
       <div className="grid">
         {artworks.map((a) => (
-          <div key={a.id} className="art-card">
+          <Link key={a.id} to={`/artworks/${a.id}`} className="art-card">
             {a.imageUrl && <img src={imgSrc(a.imageUrl)} alt={a.title} />}
             <div className="art-body">
               <h3>{a.title}</h3>
               <p className="artist">{a.artistName}</p>
-              {a.description && <p className="desc">{a.description}</p>}
               {a.price != null && <p className="price">₹{a.price}</p>}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -29,3 +29,10 @@ export function authFetch(path, options = {}) {
     },
   });
 }
+
+// full URL as-is; "/starrynight.jpg" is served from this site's public folder
+export const imgSrc = (u) => {
+  if (!u) return "";
+  if (/^https?:\/\//.test(u)) return u;
+  return u.startsWith("/") ? u : `/${u}`;
+};
