@@ -155,3 +155,16 @@ a.art-card { text-decoration: none; color: inherit; display: block; }
   border-radius: 10px;
 }
 .btn-ghost:hover { background: #fff; color: #1f2933; }
+.auth-admin {
+  background: url("/admin.jpg") center/cover no-repeat,
+    linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #60a5fa 100%);
+}
+.auth-admin .btn { background: #7b4aa0; }
+.auth-admin .btn:hover { background: #623a82; }
+.back-btn {
+  position: absolute; top: 14px; right: 14px;
+  background: #ef4444; color: #fff !important;
+  padding: 6px 14px; border-radius: 8px;
+  font-size: 13px; font-weight: 600; text-decoration: none;
+}
+.back-btn:hover { background: #dc2626; }

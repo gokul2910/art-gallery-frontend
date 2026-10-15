@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
+import AdminLogin from "./AdminLogin";
 import Register from "./Register";
 import AdminRoute from "./AdminRoute";
 import AddArtwork from "./AddArtwork";
@@ -14,6 +15,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/admin-login" element={<AdminLogin />} />
       <Route path="/register" element={<Register />} />
       <Route
         path="/artworks"

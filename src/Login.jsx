@@ -32,6 +32,7 @@ export default function Login() {
         </form>
         <p className="error">{msg}</p>
         <p className="alt">Don't have an account? <Link to="/register">Register Here</Link></p>
+        <p className="alt"><Link to="/admin-login">Admin Login</Link></p>
       </div>
     </div>
   );
