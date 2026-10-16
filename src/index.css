@@ -168,3 +168,9 @@ a.art-card { text-decoration: none; color: inherit; display: block; }
   font-size: 13px; font-weight: 600; text-decoration: none;
 }
 .back-btn:hover { background: #dc2626; }
+.checkout-card { background: #fff; border-radius: 16px; padding: 24px; max-width: 560px; margin: 0 auto; border: 1px solid #e5e7eb; }
+.checkout-summary { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
+.checkout-summary img { width: 120px; height: 90px; object-fit: cover; border-radius: 8px; }
+.checkout-form { display: flex; flex-direction: column; gap: 12px; }
+.checkout-form input[type="text"], .checkout-form input:not([type]), .checkout-form textarea { padding: 10px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; font-family: inherit; }
+.checkout-form label { display: flex; gap: 8px; align-items: center; }

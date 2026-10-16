@@ -9,6 +9,7 @@ import ArtworksPage from "./ArtworksPage";
 import ProtectedRoute from "./ProtectedRoute";
 import Navbar from "./Navbar";
 import ArtworkDetail from "./ArtworkDetail";
+import Checkout from "./Checkout";
 
 export default function App() {
   return (
@@ -32,6 +33,15 @@ export default function App() {
           <ProtectedRoute>
             <Navbar />
             <ArtworkDetail />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/checkout/:id"
+        element={
+          <ProtectedRoute>
+            <Navbar />
+            <Checkout />
           </ProtectedRoute>
         }
       />
